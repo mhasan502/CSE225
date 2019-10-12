@@ -21,7 +21,7 @@ int dynarr::getValue(int index)
 {
     return data[index];
 }
-void dynarr::setvalue(int index,int value)
+void dynarr::setValue(int index,int value)
 {
     data[index] = value;
 }
