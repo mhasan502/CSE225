@@ -1,8 +1,7 @@
 #ifndef DYNARR_H_INCLUDED
 #define DYNARR_H_INCLUDED
 
-template <class T>
-class dynArr{
+template <class T> class dynArr{
     private:
         T *data;
         int size;
