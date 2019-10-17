@@ -1,19 +1,18 @@
 #include <iostream>
-#include"dynarr.h"
+#include "dynarr.cpp"
 using namespace std;
 
-int main(){
-    int input, size=5;
+int main() {
+    int input, size = 5;
+    dynArr<int> di(size);
 
-    //cin >> size;
-    dynArr<double> d1(size);
+    for (int i = 0; i < size; i++) {
+        cin >> input;
+        di.setValue(i, input);
+    }
+    for (int i = 0; i < size; i++) {
+        cout << di.getValue(i) << " ";
+    }
 
-    for(int i=0; i<size; i++){
-        //cin >> input;
-        d1.setValue(i,input);
-    }
-    for(int i=0; i<size; i++){
-        cout << d1.getValue(i) << " ";
-    }
     return 0;
 }
