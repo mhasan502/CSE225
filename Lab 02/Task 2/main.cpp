@@ -2,8 +2,8 @@
 #include"dynarr.h"
 using namespace std;
 
-int main()
-{
+int main(){
+    
     int size,input;
     dynarr d1();
     dynarr d2(5);
