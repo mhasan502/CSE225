@@ -2,7 +2,6 @@
 #define DYNARR_H
 
 class dynarr{
-
 public:
     dynarr();
     dynarr(int);
