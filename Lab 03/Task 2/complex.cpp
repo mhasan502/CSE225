@@ -17,6 +17,5 @@ Complex Complex::operator+(Complex a){
     return t;
 }
 void Complex::Print(){
-    cout << Real << endl;
-    cout << Imaginary << endl;
+    cout << Real <<"+"<< Imaginary <<"i" << endl;
 }
