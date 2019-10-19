@@ -4,7 +4,6 @@
 using namespace std;
 
 int main(){
-
     Complex c1(5,2), c2(5,3);
     Complex c3 = c1+c2;
     Complex c4 = c1*c2;
