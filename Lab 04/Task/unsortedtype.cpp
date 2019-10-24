@@ -1,4 +1,7 @@
-#include "unsortedtype.h"
+#include "Unsortedtype.h"
+#include <iostream>
+using namespace std;
+
 template <class ItemType>
 UnsortedType<ItemType>::UnsortedType() {
     length = 0;
@@ -53,4 +56,10 @@ void UnsortedType<ItemType>::DeleteItem(ItemType  item){
         location++;
     info[location] = info[length - 1];
     length--;
+}
+template <class ItemType>
+void UnsortedType<ItemType>::Print(){
+    for(int i=0; i<length; i++){
+        cout << info[i] << " ";
+    }
 }
