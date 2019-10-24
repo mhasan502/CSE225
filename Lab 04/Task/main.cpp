@@ -12,6 +12,9 @@ int main(){
     ut.InsertItem(6);
     ut.InsertItem(9);
     ut.Print();
+    cout << ut.LengthIs() << endl;
+    ut.InsertItem(1);
+    ut.Print();
 
     return 0;
 }
