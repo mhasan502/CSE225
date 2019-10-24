@@ -62,4 +62,5 @@ void UnsortedType<ItemType>::Print(){
     for(int i=0; i<length; i++){
         cout << info[i] << " ";
     }
+    cout << endl;
 }
