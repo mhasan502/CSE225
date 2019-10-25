@@ -10,7 +10,7 @@ Complex::Complex(double r, double i){
     Real = r;
     Imaginary = i;
 }
-Complex Complex::operator+(Complex a){
+Complex Complex::operator +(Complex a){
     Complex t;
     t.Real = Real + a.Real;
     t.Imaginary = Imaginary + a.Imaginary;
@@ -18,7 +18,7 @@ Complex Complex::operator+(Complex a){
 }
 Complex Complex::operator *(Complex a){
     Complex t;
-    t.Real = (Real*a.Real)-(Imaginary*a.Imaginary);
+    t.Real = (Real*a.Real) - (Imaginary*a.Imaginary);
     t.Imaginary = (Real*a.Imaginary)-(Imaginary*a.Real);
     return t;
 }
