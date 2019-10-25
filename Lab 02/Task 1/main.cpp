@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 #include"dynarr.h"
 using namespace std;
 
@@ -15,6 +15,5 @@ int main(){
     for(int i=0; i<5; i++){
             cout << d2.getValue(i) << " ";
     }
-
     return 0;
 }
