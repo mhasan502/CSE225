@@ -6,13 +6,11 @@ dynarr::dynarr(){
     data = NULL;
     row = 0, col = 0;
 }
-
 dynarr::dynarr(int row, int col){
     data = new int*[row];
     for (int i = 0; i < row; i++) {
         data[i] = new int[col];
     }
-
 }
 dynarr::~dynarr(){
     delete [] data;
