@@ -18,13 +18,13 @@ int main() {
             cin >> ptr[i][j];
         }
     }
-
     for(int i=0; i<row; i++){     //Output
         for(int j=0; j<colArray[i]; j++){
             cout << ptr[i][j] << " ";
         }
         cout << endl;
     }
+    
     delete [] ptr;    //Deallocate memory
 
     return 0;
