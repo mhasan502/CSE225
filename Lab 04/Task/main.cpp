@@ -6,7 +6,6 @@ using namespace std;
 int main(){
 
     UnsortedType<int> ut;
-
     ut.InsertItem(5);
     ut.InsertItem(7);
     ut.InsertItem(6);
