@@ -6,7 +6,6 @@ dynarr::dynarr(){
     data = NULL;
     size = 0;
 }
-
 dynarr::dynarr(int s){
     data = new int[s];
     size = s;
