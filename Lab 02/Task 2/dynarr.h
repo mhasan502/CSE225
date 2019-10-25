@@ -13,5 +13,4 @@ class dynarr{
         int *data;
         int size;
 };
-
 #endif // DYNARR_H
