@@ -8,8 +8,10 @@ int main(){
     Complex c3 = c1+c2;
     Complex c4 = c1*c2;
     bool b = (c1!=c2);
+    
     c3.Print();
     c4.Print();
+    
     cout << b << endl;
 
     return 0;
