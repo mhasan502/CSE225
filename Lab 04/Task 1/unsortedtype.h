@@ -2,8 +2,7 @@
 #define UNSORTEDTYPE_H_INCLUDED
 const int MAX_ITEMS = 5;
 
-template <class ItemType>
-class UnsortedType{
+template <class ItemType> class UnsortedType{
     public :
         UnsortedType();
         void MakeEmpty();
