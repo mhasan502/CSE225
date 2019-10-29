@@ -28,8 +28,8 @@ int main(){
     ut.InsertItem(1);
     ut.Print();
 
-    int &value=4;
-    bool &boolVar;
+    int value=4;
+    bool boolVar;
     ut.RetrieveItem(value,boolVar);
     checkItem(boolVar);
     value=5;
@@ -51,4 +51,3 @@ int main(){
 
     return 0;
 }
-//Won't work
