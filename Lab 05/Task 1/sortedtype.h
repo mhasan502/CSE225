@@ -14,6 +14,7 @@ class SortedType {
      void RetrieveItem(ItemType&, bool&);
      void ResetList();
      void GetNextItem(ItemType&);
+     void Print();
  private:
      int length;
      ItemType info[MAX_ITEMS];
