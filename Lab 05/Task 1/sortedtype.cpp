@@ -1,26 +1,35 @@
 #include "sortedtype.h"
+#include <iostream>
+using namespace std;
 
-template <class ItemType> SortedType<ItemType>::SortedType(){
+template <class ItemType>
+SortedType<ItemType>::SortedType(){
     length = 0;
     currentPos = - 1;
 }
-template <class ItemType> void SortedType<ItemType>::MakeEmpty(){
+template <class ItemType>
+void SortedType<ItemType>::MakeEmpty(){
     length = 0;
 }
-template <class ItemType> bool SortedType<ItemType>::IsFull(){
+template <class ItemType>
+bool SortedType<ItemType>::IsFull(){
     return (length == MAX_ITEMS);
 }
-template <class ItemType> int SortedType<ItemType>::LengthIs(){
+template <class ItemType>
+int SortedType<ItemType>::LengthIs(){
     return length;
 }
-template <class ItemType> void SortedType<ItemType>::ResetList(){
+template <class ItemType>
+void SortedType<ItemType>::ResetList(){
     currentPos = - 1;
 }
-template <class ItemType> void SortedType<ItemType>::GetNextItem(ItemType& item){
+template <class ItemType>
+void SortedType<ItemType>::GetNextItem(ItemType& item){
     currentPos++;
     item = info[currentPos];
 }
-template <class ItemType> void SortedType<ItemType>::InsertItem(ItemType item){
+template <class ItemType>
+void SortedType<ItemType>::InsertItem(ItemType item){
     int location = 0;
     bool moreToSearch = (location < length);
     while(moreToSearch){
@@ -36,7 +45,8 @@ template <class ItemType> void SortedType<ItemType>::InsertItem(ItemType item){
     info[location] = item;
     length++;
 }
-template <class ItemType> void SortedType<ItemType>::DeleteItem(ItemType item){
+template <class ItemType>
+void SortedType<ItemType>::DeleteItem(ItemType item){
     int location = 0;
     while(item != info[location])
         location++;
@@ -44,7 +54,8 @@ template <class ItemType> void SortedType<ItemType>::DeleteItem(ItemType item){
         info[index - 1] = info[index];
     length--;
 }
-template <class ItemType> void SortedType<ItemType>::RetrieveItem(ItemType& item, bool& found){
+template <class ItemType>
+void SortedType<ItemType>::RetrieveItem(ItemType& item, bool& found){
     int midPoint, first = 0, last = length - 1;
     bool moreToSearch = (first <= last);
     found = false;
@@ -63,4 +74,11 @@ template <class ItemType> void SortedType<ItemType>::RetrieveItem(ItemType& item
             item = info[midPoint];
         }
     }
+}
+template <class ItemType>
+void SortedType<ItemType>::Print(){
+    for(int i=0; i<length; i++){
+        cout << info[i] << " ";
+    }
+    cout << endl;
 }
