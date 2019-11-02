@@ -19,11 +19,11 @@ void Print(StackType<int> st){
     StackType<int> temp;
 
     while(!st.IsEmpty()){
-        temp.Push(st.Pop());
+        temp.Push(st.Top());
         st.Pop();
     }
     while(!temp.IsEmpty()){
-        st.Push(temp.Pop());
+        st.Push(temp.Top());
         cout << temp.Top() << " ";
         temp.Pop();
     }
