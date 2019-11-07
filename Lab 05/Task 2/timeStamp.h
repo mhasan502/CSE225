@@ -2,16 +2,18 @@
 #define TIMESTAMP_H_INCLUDED
 
 class timeStamp{
-
+    private:
+        int s;
+        int m;
+        int h;
     public:
         timeStamp();
-        timeStamp(int, int, int);
-        void Tprint();
+        timeStamp(int,int,int);
         bool operator ==(timeStamp);
-    private:
-        int ss;
-        int mm;
-        int hh;
+        bool operator !=(timeStamp);
+        bool operator > (timeStamp);
+        bool operator < (timeStamp);
+        friend ostream& operator << (ostream&, timeStamp&); // Just like toString method in Java
 
 };
 #endif // TIMESTAMP_H_INCLUDED
