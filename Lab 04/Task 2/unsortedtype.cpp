@@ -1,59 +1,32 @@
-#include "Unsortedtype.h"
-#include <iostream>
-using namespace std;
+#include "studentInfo.h"
 
-template <class ItemType>
-UnsortedType<ItemType>::UnsortedType() {
-    length = 0;
-    currentPos = -1;
+studentInfo::studentInfo(int id, string name, double cgpa){
+    this->id = id;
+    this->name = name;
+    this->cgpa = cgpa;
 }
-template <class ItemType>
-void UnsortedType<ItemType>::MakeEmpty() {
-    length = 0;
+
+studentInfo::studentInfo(){
+
 }
-template <class ItemType>
-bool UnsortedType<ItemType>::IsFull() {
-    return (length == MAX_ITEMS);
+
+studentInfo::studentInfo(int id){
+    this->id = id;
 }
-template <class ItemType>
-int UnsortedType<ItemType>::LengthIs() {
-    return length;
+
+bool studentInfo::operator==(studentInfo s){
+    if(this->id==s.id)
+        return true;
+    else
+        return false;
 }
-template <class ItemType>
-void UnsortedType<ItemType>::ResetList(){
-    currentPos = -1;
+bool studentInfo::operator!=(studentInfo s){
+    if(this->id!=s.id)
+        return true;
+    else
+        return false;
 }
-template <class ItemType>
-void UnsortedType<ItemType>::GetNextItem(ItemType& item){
-    currentPos++;
-    item = info [currentPos] ;
-}
-template <class ItemType>
-void UnsortedType<ItemType>::RetrieveItem(ItemType& item, bool &found) {
-    int location = 0;
-    bool moreToSearch = (location < length);
-    found = false;
-    while (moreToSearch && !found){
-        if(item == info[location]){
-            found = true;
-            item = info[location];
-        }
-        else{
-            location++;
-            moreToSearch = (location < length);
-        }
-    }
-}
-template <class ItemType>
-void UnsortedType<ItemType>::InsertItem(ItemType item){
-    info[length] = item;
-    length++;
-}
-template <class ItemType>
-void UnsortedType<ItemType>::DeleteItem(ItemType  item){
-    int location = 0;
-    while (item != info[location])
-        location++;
-    info[location] = info[length - 1];
-    length--;
+ostream& operator << (ostream& os, studentInfo& student){
+    os << student.id << ", " << student.name << ", " << student.cgpa << endl;
+    return os;
 }
