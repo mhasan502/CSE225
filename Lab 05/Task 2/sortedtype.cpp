@@ -62,10 +62,3 @@ void SortedType<ItemType>::RetrieveItem(ItemType& item, bool& found){
         }
     }
 }
-template <class ItemType>
-void SortedType<ItemType>::Print(){
-    for(int i=0; i<length; i++){
-        info[i].Tprint();
-    }
-    cout << endl;
-}
