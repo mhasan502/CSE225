@@ -1,13 +1,27 @@
 #include <iostream>
-#include "unsortedtype.h"
 #include "unsortedtype.cpp"
 using namespace std;
 
-void checkItem(bool b){
+template <class T>
+void Print(UnsortedType<T> u){
+
+    int length = u.LengthIs();
+    T value;
+    for(int i=0; i<length; i++){
+        u.GetNextItem(value);
+        cout << value << " ";
+    }
+    cout << endl;
+}
+template <class T>
+void Retrieve(UnsortedType<T> u, T value){
+    bool b;
+    u.RetrieveItem(value,b);
     if(b)
         cout << "Item is found" << endl;
     else
         cout << "Item is not found" << endl;
+
 }
 void checkFull(bool b){
     if(b)
@@ -23,31 +37,24 @@ int main(){
     ut.InsertItem(7);
     ut.InsertItem(6);
     ut.InsertItem(9);
-    ut.Print();
+    Print(ut);
+
     cout << ut.LengthIs() << endl;
     ut.InsertItem(1);
-    ut.Print();
+    Print(ut);
 
-    int value=4;
-    bool boolVar;
-    ut.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
-    value=5;
-    ut.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
-    value=9;
-    ut.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
-    value=10;
-    ut.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
+    Retrieve(ut,4);
+    Retrieve(ut,5);
+    Retrieve(ut,9);
+    Retrieve(ut,10);
+
     checkFull(ut.IsFull());
     ut.DeleteItem(5);
     checkFull(ut.IsFull());
     ut.DeleteItem(1);
-    ut.Print();
+    Print(ut);
     ut.DeleteItem(6);
-    ut.Print();
+    Print(ut);
 
     return 0;
 }
