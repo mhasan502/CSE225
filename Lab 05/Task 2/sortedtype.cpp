@@ -30,15 +30,28 @@ void SortedType<ItemType>::GetNextItem(ItemType& item){
 }
 template <class ItemType>
 void SortedType<ItemType>::InsertItem(ItemType item){
-    info[length] = item;
+    int location = 0;
+    bool moreToSearch = (location < length);
+    while(moreToSearch){
+        if(item > info[location]){
+            location++;
+            moreToSearch = (location < length);
+        }
+        else if(item < info[location])
+            moreToSearch = false;
+    }
+    for(int index = length; index > location; index--)
+        info[index] = info[index - 1];
+    info[location] = item;
     length++;
 }
 template <class ItemType>
 void SortedType<ItemType>::DeleteItem(ItemType item){
     int location = 0;
-    while (!(item == info[location]))
+    while(item != info[location])
         location++;
-    info[location] = info[length - 1];
+    for(int index = location + 1; index < length; index++)
+        info[index - 1] = info[index];
     length--;
 }
 template <class ItemType>
