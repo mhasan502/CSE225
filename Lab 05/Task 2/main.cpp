@@ -1,9 +1,35 @@
 #include <iostream>
-#include "sortedtype.h"
-#include "timeStamp.h"
 #include "sortedtype.cpp"
 #include "timeStamp.cpp"
 using namespace std;
+
+template <class T>
+void Print(SortedType<T> u){
+
+    int length = u.LengthIs();
+    T value;
+    for(int i=0; i<length; i++){
+        u.GetNextItem(value);
+        cout << value << endl;
+    }
+    cout << endl;
+}
+template <class T>
+void Retrieve(SortedType<T> u, T value){
+    bool b;
+    u.RetrieveItem(value,b);
+    if(b)
+        cout << "Item is found" << endl;
+    else
+        cout << "Item is not found" << endl;
+
+}
+void checkFull(bool b){
+    if(b)
+        cout << "List is full" << endl;
+    else
+        cout << "List is not full" << endl;
+}
 
 int main(){
 
@@ -19,9 +45,12 @@ int main(){
     st.InsertItem(t3);
     st.InsertItem(t4);
     st.InsertItem(t5);
-    st.Print();
+    Print(st);
 
-    st.DeleteItem(t4);
-    st.Print();
+    timeStamp temp(25,36,17);
+    st.DeleteItem(temp);
+
+    Print(st);
+
     return 0;
 }
