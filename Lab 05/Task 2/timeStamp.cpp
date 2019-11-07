@@ -1,22 +1,39 @@
 #include "timeStamp.h"
 
 timeStamp::timeStamp(){
-    ss = 0;
-    mm = 0;
-    hh = 0;
-}
 
+}
 timeStamp::timeStamp(int s, int m, int h){
-    ss = s;
-    mm = m;
-    hh = h;
+    this->s = s;
+    this->m = m;
+    this->h = h;
 }
-void timeStamp::Tprint(){
-    cout << ss <<":"<< mm << ":" << hh <<endl;
-}
-bool timeStamp::operator ==(timeStamp t){
-    if((ss==t.ss)&&(mm==t.mm)&&(hh==t.hh))
+bool timeStamp::operator==(timeStamp t){
+    if((s==t.s)&&(m==t.m)&&(h==t.h))
         return true;
     else
         return false;
+}
+bool timeStamp::operator!=(timeStamp t){
+    if(!(s==t.s)&&(m==t.m)&&(h==t.h))
+        return true;
+    else
+        return false;
+}
+bool timeStamp::operator < (timeStamp t){
+    if((h<t.h) || ((h==t.h)&&(m<t.m)) || ((h=t.h)&&(m==t.m) && (s<t.s)))
+        return true;
+    else
+        return false;
+}
+
+bool timeStamp::operator > (timeStamp t){
+    if((h>t.h) || ((h==t.h)&&(m>t.m)) || ((h==t.h)&&(m==t.m) && (s>t.s)))
+        return true;
+    else
+        return false;
+}
+ostream& operator << (ostream& os, timeStamp& t){
+    os << t.s << ":" << t.m << ":" << t.h;
+    return os;
 }
