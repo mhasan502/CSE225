@@ -2,11 +2,26 @@
 #include "sortedtype.cpp"
 using namespace std;
 
-void checkItem(bool b){
+template <class T>
+void Print(SortedType<T> u){
+
+    int length = u.LengthIs();
+    T value;
+    for(int i=0; i<length; i++){
+        u.GetNextItem(value);
+        cout << value << " ";
+    }
+    cout << endl;
+}
+template <class T>
+void Retrieve(SortedType<T> u, T value){
+    bool b;
+    u.RetrieveItem(value,b);
     if(b)
         cout << "Item is found" << endl;
     else
         cout << "Item is not found" << endl;
+
 }
 void checkFull(bool b){
     if(b)
@@ -17,7 +32,6 @@ void checkFull(bool b){
 
 int main(){
 
-    int value; bool boolVar;
     SortedType<int> st;
     cout << st.LengthIs() << endl;
 
@@ -26,20 +40,15 @@ int main(){
     st.InsertItem(4);
     st.InsertItem(2);
     st.InsertItem(1);
-    st.Print();
+    Print(st);
 
-    value = 6;
-    st.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
-
-    value = 5;
-    st.RetrieveItem(value,boolVar);
-    checkItem(boolVar);
+    Retrieve(st,6);
+    Retrieve(st,5);
 
     checkFull(st.IsFull());
     st.DeleteItem(1);
 
-    st.Print();
+    Print(st);
     checkFull(st.IsFull());
 
     return 0;
