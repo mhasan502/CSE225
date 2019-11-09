@@ -5,21 +5,22 @@ using namespace std;
 int main(){
 
     StackType<char> st;
-    string str = ")()()(";
+    string str = ")(";
     int count = 0;
 
     for(int i=0; str[i]!='\0'; i++){
         if(str[i]=='('){
             st.Push(str[i]);
         }
-        if(str[i]==')'){
-            count++;
+        try{
+            if(str[i]==')'){
+                st.Pop();
+            }
+        }catch(EmptyStack e){
+            cout << "Unbalanced" << endl;
+            return 0;
         }
 
-    }
-    while(count>0){
-            st.Pop();
-            count--;
     }
     if(st.IsEmpty())
         cout << "Balanced" << endl;
