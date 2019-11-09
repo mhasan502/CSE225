@@ -1,9 +1,8 @@
 #ifndef STACKTYPE_H_INCLUDED
 #define STACKTYPE_H_INCLUDED
-class FullStack
-{};
-class EmptyStack
-{};
+class FullStack{};
+class EmptyStack{};
+
 template <class ItemType>
 class StackType{
     struct NodeType{
