@@ -1,5 +1,4 @@
 #include "heaptype.h"
-
 template<class ItemType>
 void Swap(ItemType& one, ItemType& two){
     ItemType temp;
@@ -15,17 +14,18 @@ void HeapType<ItemType>::ReheapDown(int root, int bottom){
 
     leftChild = root * 2 + 1;
     rightChild = root * 2 + 2;
-    if(leftChild <= bottom) {
+    if(leftChild <= bottom){
         if(leftChild == bottom){
             maxChild = leftChild;
-        } 
-        else {
-            if(elements[leftChild] <= elements[rightChild])
-                maxChild = leftChild;
-            else
-                maxChild = rightChild;
         }
-        if(elements[root] > elements[maxChild]) {
+        else {
+            if(elements[leftChild] <= elements[rightChild]){
+                maxChild = rightChild;
+            } else{
+                maxChild = leftChild;
+            }
+        }
+        if(elements[root] < elements[maxChild]) {
             Swap(elements[root], elements[maxChild]);
             ReheapDown(maxChild,bottom);
         }
@@ -36,7 +36,7 @@ void HeapType<ItemType>::ReheapUp(int root, int bottom){
     int parent;
     if(bottom > root){
         parent = (bottom - 1) / 2;
-        if(elements[parent] > elements[bottom]){
+        if(elements[parent] < elements[bottom]){
             Swap(elements[parent], elements[bottom]);
             ReheapUp(root, parent);
         }
