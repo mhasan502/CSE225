@@ -1,5 +1,6 @@
 #ifndef COMPLEX_H_INCLUDED
 #define COMPLEX_H_INCLUDED
+
 class Complex {
     public:
         Complex();
@@ -11,4 +12,5 @@ class Complex {
     private:
         double Real, Imaginary;
 };
+
 #endif // COMPLEX_H_INCLUDED

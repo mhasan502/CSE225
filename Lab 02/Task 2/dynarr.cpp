@@ -1,24 +1,30 @@
 #include "dynarr.h"
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-dynarr::dynarr(){
+dynarr::dynarr() {
     data = NULL;
     size = 0;
 }
-dynarr::dynarr(int s){
+
+dynarr::dynarr(int s) {
     data = new int[s];
     size = s;
 }
-dynarr::~dynarr(){
-    delete [] data;
+
+dynarr::~dynarr() {
+    delete[] data;
 }
-int dynarr::getValue(int index){
+
+int dynarr::getValue(int index) {
     return data[index];
 }
-void dynarr::setValue(int index, int value){
+
+void dynarr::setValue(int index, int value) {
     data[index] = value;
 }
-void dynarr::allocate(int s){
+
+void dynarr::allocate(int s) {
+    dynarr::~dynarr();
     data = new int[s];
 }
