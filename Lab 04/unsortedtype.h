@@ -1,29 +1,25 @@
 #ifndef UNSORTEDTYPE_H_INCLUDED
 #define UNSORTEDTYPE_H_INCLUDED
 
+const int MAX_ITEMS = 5;
+
 template<class ItemType>
 class UnsortedType {
-    struct NodeType {
-        ItemType info;
-        NodeType *next;
-    };
-
-    public:
+    public :
         UnsortedType();
-        ~UnsortedType();
+        void MakeEmpty();
         bool IsFull();
         int LengthIs();
-        void MakeEmpty();
-        void RetrieveItem(ItemType &, bool &);
         void InsertItem(ItemType);
         void DeleteItem(ItemType);
+        void RetrieveItem(ItemType &, bool &);
         void ResetList();
         void GetNextItem(ItemType &);
 
     private:
-        NodeType *listData;
         int length;
-        NodeType *currentPos;
+        ItemType info[MAX_ITEMS];
+        int currentPos;
 };
 
 #endif // UNSORTEDTYPE_H_INCLUDED

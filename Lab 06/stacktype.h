@@ -1,15 +1,21 @@
 #ifndef STACKTYPE_H_INCLUDED
 #define STACKTYPE_H_INCLUDED
+
 const int MAX_ITEMS = 5;
 
-class FullStack {
-};
+class FullStack
+// Exception class thrown
+// by Push when stack is full.
+{};
 
-class EmptyStack {
-};
+class EmptyStack
+// Exception class thrown
+// by Pop and Top when stack is emtpy.
+{};
 
 template<class ItemType>
 class StackType {
+
     public:
         StackType();
         bool IsFull();

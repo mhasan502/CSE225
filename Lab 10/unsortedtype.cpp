@@ -1,35 +1,35 @@
-#include "unsortedtype.h"
 #include <iostream>
+#include "unsortedtype.h"
 using namespace std;
 
-template <class ItemType>
-UnsortedType<ItemType>::UnsortedType(){
+template<class ItemType>
+UnsortedType<ItemType>::UnsortedType() {
     length = 0;
     listData = NULL;
     currentPos = NULL;
 }
 
-template <class ItemType>
-int UnsortedType<ItemType>::LengthIs(){
+template<class ItemType>
+int UnsortedType<ItemType>::LengthIs() {
     return length;
 }
 
 template<class ItemType>
-bool UnsortedType<ItemType>::IsFull(){
-    NodeType* location;
-    try{
+bool UnsortedType<ItemType>::IsFull() {
+    NodeType *location;
+    try {
         location = new NodeType;
         delete location;
         return false;
     }
-    catch(bad_alloc& exception){
+    catch (bad_alloc &exception) {
         return true;
     }
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::InsertItem(ItemType item){
-    NodeType* location;
+template<class ItemType>
+void UnsortedType<ItemType>::InsertItem(ItemType item) {
+    NodeType *location;
     location = new NodeType;
     location->info = item;
     location->next = listData;
@@ -37,16 +37,15 @@ void UnsortedType<ItemType>::InsertItem(ItemType item){
     length++;
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::DeleteItem(ItemType item){
-    NodeType* location = listData;
-    NodeType* tempLocation;
-    if(item == listData->info){
+template<class ItemType>
+void UnsortedType<ItemType>::DeleteItem(ItemType item) {
+    NodeType *location = listData;
+    NodeType *tempLocation;
+    if (item == listData->info) {
         tempLocation = location;
         listData = listData->next;
-    }
-    else{
-        while (!(item==(location->next)->info))
+    } else {
+        while (!(item == (location->next)->info))
             location = location->next;
         tempLocation = location->next;
         location->next = (location->next)->next;
@@ -55,25 +54,25 @@ void UnsortedType<ItemType>::DeleteItem(ItemType item){
     length--;
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::RetrieveItem(ItemType& item, bool& found){
-    NodeType* location = listData;
+template<class ItemType>
+void UnsortedType<ItemType>::RetrieveItem(ItemType &item, bool &found) {
+    NodeType *location = listData;
     bool moreToSearch = (location != NULL);
     found = false;
-    while (moreToSearch && !found){
+    while (moreToSearch && !found) {
         if (item == location->info)
             found = true;
-        else{
+        else {
             location = location->next;
             moreToSearch = (location != NULL);
         }
     }
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::MakeEmpty(){
-    NodeType* tempPtr;
-    while (listData != NULL){
+template<class ItemType>
+void UnsortedType<ItemType>::MakeEmpty() {
+    NodeType *tempPtr;
+    while (listData != NULL) {
         tempPtr = listData;
         listData = listData->next;
         delete tempPtr;
@@ -81,18 +80,18 @@ void UnsortedType<ItemType>::MakeEmpty(){
     length = 0;
 }
 
-template <class ItemType>
-UnsortedType<ItemType>::~UnsortedType(){
+template<class ItemType>
+UnsortedType<ItemType>::~UnsortedType() {
     MakeEmpty();
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::ResetList(){
+template<class ItemType>
+void UnsortedType<ItemType>::ResetList() {
     currentPos = NULL;
 }
 
-template <class ItemType>
-void UnsortedType<ItemType>::GetNextItem(ItemType& item){
+template<class ItemType>
+void UnsortedType<ItemType>::GetNextItem(ItemType &item) {
     if (currentPos == NULL)
         currentPos = listData;
     else

@@ -17,19 +17,22 @@ bool StackType<ItemType>::IsFull() {
 
 template<class ItemType>
 void StackType<ItemType>::Push(ItemType newItem) {
-    if (IsFull()) throw FullStack();
+    if (IsFull())
+        throw FullStack();
     top++;
     items[top] = newItem;
 }
 
 template<class ItemType>
 void StackType<ItemType>::Pop() {
-    if (IsEmpty()) throw EmptyStack();
+    if (IsEmpty())
+        throw EmptyStack();
     top--;
 }
 
 template<class ItemType>
 ItemType StackType<ItemType>::Top() {
-    if (IsEmpty()) throw EmptyStack();
+    if (IsEmpty())
+        throw EmptyStack();
     return items[top];
 }

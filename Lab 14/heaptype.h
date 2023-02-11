@@ -2,10 +2,10 @@
 #define HEAPTYPE_H_INCLUDED
 
 template<class ItemType>
-struct HeapType{
+struct HeapType {
     void ReheapDown(int root, int bottom);
     void ReheapUp(int root, int bottom);
-    ItemType* elements;
+    ItemType *elements;
     int numElements;
 };
 

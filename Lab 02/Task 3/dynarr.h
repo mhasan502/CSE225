@@ -1,7 +1,11 @@
 #ifndef DYNARR_H
 #define DYNARR_H
 
-class dynarr{
+class dynarr {
+    private:
+        int **data;
+        int row, col;
+
     public:
         dynarr();
         dynarr(int, int);
@@ -9,8 +13,6 @@ class dynarr{
         void setValue(int, int, int);
         int getValue(int, int);
         void allocate(int, int);
-    private:
-        int **data;
-        int row, col;
 };
-#endif // DYNARR_H
+
+#endif // DYNARR_H_INCLUDED

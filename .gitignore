@@ -1,0 +1,8 @@
+# IDE
+.idea/
+
+# ignored files
+*.o
+*.obj
+*.xml
+*.exe

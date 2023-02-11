@@ -1,14 +1,19 @@
 #ifndef STACKTYPE_H_INCLUDED
 #define STACKTYPE_H_INCLUDED
-class FullStack{};
-class EmptyStack{};
 
-template <class ItemType>
-class StackType{
-    struct NodeType{
+class FullStack {
+};
+
+class EmptyStack {
+};
+
+template<class ItemType>
+class StackType {
+    struct NodeType {
         ItemType info;
-        NodeType* next;
+        NodeType *next;
     };
+
     public:
         StackType();
         ~StackType();
@@ -17,7 +22,9 @@ class StackType{
         ItemType Top();
         bool IsEmpty();
         bool IsFull();
+
     private:
-        NodeType* topPtr;
+        NodeType *topPtr;
 };
+
 #endif // STACKTYPE_H_INCLUDED
