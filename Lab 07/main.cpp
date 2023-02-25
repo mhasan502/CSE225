@@ -54,7 +54,7 @@ void checkFull(bool b) {                         // Helper function to check if 
         cout << "Queue is not full" << endl;
 }
 
-void Print(QueType<int> &queType) {                     // Helper function to print the list
+void Print(QueType<int> &queType) {              // Helper function to print the list
     QueType<int> temp;
 
     while (!queType.IsEmpty()) {
@@ -88,7 +88,7 @@ int main() {
 
     checkFull(queue.IsFull());                   // Print if the queue is full or not
 
-    queue.Enqueue(6);                                // Enqueue another item 6
+    queue.Enqueue(6);                            // Enqueue another item 6
 
     Print(queue);                                // Print the values in the queue
 
@@ -118,21 +118,21 @@ int main() {
 
 
     // Second Task
-    QueType<string> binary;                       // Create an empty queue
+    QueType<string> binary;                      // Create an empty queue
     int n;
     string var;
     cin >> n;
 
-    binary.Enqueue("1");                          // Enqueue the first binary number "1" to the queue
+    binary.Enqueue("1");                         // Enqueue the first binary number "1" to the queue
 
     while (n--) {                                // Run a loop for generating and printing "n" binary numbers
-        binary.Dequeue(var);                      // Dequeue and print the value
+        binary.Dequeue(var);                     // Dequeue and print the value
         string s1 = var;
         cout << s1 << endl;
 
         string s2 = s1;
-        binary.Enqueue(s1.append("0"));           // Append "0" at the dequeued value and enqueue it
-        binary.Enqueue(s2.append("1"));           // Append "1" at the dequeued value and enqueue it
+        binary.Enqueue(s1.append("0"));          // Append "0" at the dequeued value and enqueue it
+        binary.Enqueue(s2.append("1"));          // Append "1" at the dequeued value and enqueue it
     }
 
     return 0;

@@ -94,7 +94,7 @@ int main() {
 
 
     // Second Task
-    StackType<char> parentheses;                          // Create a stack of characters to take input
+    StackType<char> parentheses;                 // Create a stack of characters to take input
 
     string str;                                  // String to take input from the user
     cin >> str;
