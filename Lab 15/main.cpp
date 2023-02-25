@@ -66,8 +66,8 @@ int main() {
 
     cout << g.OutDegree('D') << endl;            // Print outdegree of vertex D
 
-    Print(g.FoundEdge('A', 'D'));       // Print if there is an edge between vertices A and D
-    Print(g.FoundEdge('B', 'D'));       // Print if there is an edge between vertices B and D
+    Print(g.FoundEdge('A', 'D'));                // Print if there is an edge between vertices A and D
+    Print(g.FoundEdge('B', 'D'));                // Print if there is an edge between vertices B and D
 
     g.DepthFirstSearch('B', 'E');                // Use DFS in order to find if there is a path from B to E
     g.DepthFirstSearch('E', 'B');                // Use DFS in order to find if there is a path from E to B
@@ -75,6 +75,6 @@ int main() {
     g.BreadthFirstSearch('B', 'E');              // Use BFS in order to find if there is a path from B to E
     g.BreadthFirstSearch('E', 'B');              // Use BFS in order to find if there is a path from E to B
 
-    g.BreadthFirstSearch('B', 'E');        // Use BFS to print the length of the shortest path
+    g.BreadthFirstSearch('B', 'E');              // Use BFS to print the length of the shortest path
     return 0;
 }

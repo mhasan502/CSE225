@@ -47,8 +47,6 @@ int main() {
     timeStamp t5(52, 02, 20);
     st.InsertItem(t5);
 
-    //Print(st);                                   // Print the list
-
     timeStamp temp(25, 36, 17);                  // Delete the timestamp "25  36  17"
     st.DeleteItem(temp);
 
