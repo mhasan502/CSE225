@@ -1,9 +1,9 @@
 # CSE225 - Data Structures and Algorithms
 ###### This repository contains the solution code for the course CSE225 - Data Structures and Algorithms Lab, taught by [Dr. Ahmedul Kabir](http://www.iit.du.ac.bd/about_iit/individual_teacher/67) in Fall 2019 at [North South University](http://www.northsouth.edu/).
 
-### The repository is organized as follows:
+### The repository is organized as follows:mnwfregfdmznfkjsdncxzkjnfwkjdsxz
 ```
-Repository
+Repositorywqe fdgbnds sdfkwe
     ├── Lab
     │   ├── Lab Manual
     │   │   ├── [Lab Manual.pdf]
